@@ -1,9 +1,9 @@
        IDENTIFICATION DIVISION.
        PROGRAM-ID. RPT3000.
       ****************************************************************
-      * PROGRAM NAME: RPT2000
+      * PROGRAM NAME: RPT3000
       * AUTHORS: Hayden Schmidt & Jacob Schamp
-      * DATE: 02/20/2026
+      * DATE: 03/22/2026
       * DESCRIPTION: Year-To-Date Sales Report with Change Columns
       ****************************************************************
 
@@ -12,7 +12,7 @@
 
        FILE-CONTROL.
            SELECT I_CUSTMAST ASSIGN TO CUSTMAST.
-           SELECT O_RPT2000  ASSIGN TO RPT3000.
+           SELECT O_RPT2000 ASSIGN TO RPT3000.
 
        DATA DIVISION.
        FILE SECTION.
@@ -81,8 +81,7 @@
            05 FILLER               PIC X     VALUE "/".
            05 HL1-YEAR             PIC 9(4).
            05 FILLER               PIC X(16) VALUE SPACE.
-           05 FILLER               PIC X(27)
-                                     VALUE "YEAR-TO-DATE SALES REPORT".
+           05 FILLER               PIC X(27) VALUE "YEAR-TO-DATE SALES REPORT".
            05 FILLER               PIC X(22) VALUE SPACE.
            05 FILLER               PIC X(7)  VALUE "PAGE:  ".
            05 HL1-PAGE             PIC ZZZ9.
@@ -96,47 +95,47 @@
            05 FILLER               PIC X(7)  VALUE "RPT2000".
 
        01  HEADING-LINE-3.
-           05 FILLER PIC X(6) VALUE "BRANCH".
-           05 FILLER PIC X(1) VALUE SPACE.
-           05 FILLER PIC X(5) VALUE "SALES".
-           05 FILLER PIC X(1) VALUE SPACE.
-           05 FILLER PIC X(4) VALUE "CUST".
-           05 FILLER PIC X(28) VALUE SPACE.
-           05 FILLER PIC X(10) VALUE "SALES".
-           05 FILLER PIC X(4) VALUE SPACE.
-           05 FILLER PIC X(10) VALUE "SALES".
-           05 FILLER PIC X(4) VALUE SPACE.
-           05 FILLER PIC X(6) VALUE "CHANGE".
-           05 FILLER PIC X(4) VALUE SPACE.
-           05 FILLER PIC X(7) VALUE "CHANGE".
+           05 FILLER               PIC X(6)  VALUE "BRANCH".
+           05 FILLER               PIC X(1)  VALUE SPACE.
+           05 FILLER               PIC X(5)  VALUE "SALES".
+           05 FILLER               PIC X(1)  VALUE SPACE.
+           05 FILLER               PIC X(4)  VALUE "CUST".
+           05 FILLER               PIC X(28) VALUE SPACE.
+           05 FILLER               PIC X(10) VALUE "SALES".
+           05 FILLER               PIC X(4)  VALUE SPACE.
+           05 FILLER               PIC X(10) VALUE "SALES".
+           05 FILLER               PIC X(4)  VALUE SPACE.
+           05 FILLER               PIC X(6)  VALUE "CHANGE".
+           05 FILLER               PIC X(4)  VALUE SPACE.
+           05 FILLER               PIC X(7)  VALUE "CHANGE".
 
        01  HEADING-LINE-4.
-           05 FILLER PIC X(3) VALUE "NUM".
-           05 FILLER PIC X(5) VALUE SPACE.
-           05 FILLER PIC X(3) VALUE "REP".
-           05 FILLER PIC X(3) VALUE SPACE.
-           05 FILLER PIC X(3) VALUE "NUM".
-           05 FILLER PIC X(2) VALUE SPACE.
-           05 FILLER PIC X(20) VALUE "CUSTOMER NAME".
-           05 FILLER PIC X(3) VALUE SPACE.
-           05 FILLER PIC X(10) VALUE "THIS YTD".
-           05 FILLER PIC X(4) VALUE SPACE.
-           05 FILLER PIC X(10) VALUE "LAST YTD".
-           05 FILLER PIC X(4) VALUE SPACE.
-           05 FILLER PIC X(6) VALUE "AMOUNT".
-           05 FILLER PIC X(4) VALUE SPACE.
-           05 FILLER PIC X(7) VALUE "PERCENT".
+           05 FILLER               PIC X(3)  VALUE "NUM".
+           05 FILLER               PIC X(5)  VALUE SPACE.
+           05 FILLER               PIC X(3)  VALUE "REP".
+           05 FILLER               PIC X(3)  VALUE SPACE.
+           05 FILLER               PIC X(3)  VALUE "NUM".
+           05 FILLER               PIC X(2)  VALUE SPACE.
+           05 FILLER               PIC X(20) VALUE "CUSTOMER NAME".
+           05 FILLER               PIC X(3)  VALUE SPACE.
+           05 FILLER               PIC X(10) VALUE "THIS YTD".
+           05 FILLER               PIC X(4)  VALUE SPACE.
+           05 FILLER               PIC X(10) VALUE "LAST YTD".
+           05 FILLER               PIC X(4)  VALUE SPACE.
+           05 FILLER               PIC X(6)  VALUE "AMOUNT".
+           05 FILLER               PIC X(4)  VALUE SPACE.
+           05 FILLER               PIC X(7)  VALUE "PERCENT".
 
        01  DASH-LINE.
-           05 FILLER PIC X(130) VALUE ALL "-".
+           05 FILLER               PIC X(130) VALUE ALL "-".
 
        01  TOTAL-DASH-LINE.
-           05 FILLER PIC X(43) VALUE SPACE.
-           05 FILLER PIC X(13) VALUE ALL "=".
-           05 FILLER PIC X(4)  VALUE SPACE.
-           05 FILLER PIC X(13) VALUE ALL "=".
-           05 FILLER PIC X(4)  VALUE SPACE.
-           05 FILLER PIC X(13) VALUE ALL "=".
+           05 FILLER               PIC X(43) VALUE SPACE.
+           05 FILLER               PIC X(13) VALUE ALL "=".
+           05 FILLER               PIC X(4)  VALUE SPACE.
+           05 FILLER               PIC X(13) VALUE ALL "=".
+           05 FILLER               PIC X(4)  VALUE SPACE.
+           05 FILLER               PIC X(13) VALUE ALL "=".
 
        01  CUSTOMER-LINE.
            05 CL-BRANCH        PIC 99.
@@ -154,20 +153,20 @@
            05 CL-CHANGE        PIC Z,ZZZ,ZZ9.99-.
            05 FILLER           PIC X(4) VALUE SPACE.
            05 CL-PERCENT       PIC ZZZ9.9-.
-       
+
        01  BRANCH-TOTAL-LINE.
-           05 FILLER        PIC X(21) VALUE SPACE.
-           05 FILLER        PIC X(13) VALUE "BRANCH TOTAL".
-           05 FILLER        PIC X(5) VALUE SPACE.
-           05 BTL-THIS      PIC Z,ZZZ,ZZ9.99-.
-           05 FILLER        PIC X(4) VALUE SPACE.
-           05 BTL-LAST      PIC Z,ZZZ,ZZ9.99-.
-           05 FILLER        PIC X(4) VALUE SPACE.
-           05 BTL-CHANGE    PIC Z,ZZZ,ZZ9.99-.
-           05 FILLER        PIC X(4) VALUE SPACE.
-           05 BTL-PERCENT   PIC ZZZ9.9-.
-           05 FILLER        PIC X(2) VALUE SPACE.
-           05 FILLER        PIC X VALUE "*". 
+           05 FILLER           PIC X(21) VALUE SPACE.
+           05 FILLER           PIC X(13) VALUE "BRANCH TOTAL".
+           05 FILLER           PIC X(5)  VALUE SPACE.
+           05 BTL-THIS         PIC Z,ZZZ,ZZ9.99-.
+           05 FILLER           PIC X(4) VALUE SPACE.
+           05 BTL-LAST         PIC Z,ZZZ,ZZ9.99-.
+           05 FILLER           PIC X(4) VALUE SPACE.
+           05 BTL-CHANGE       PIC Z,ZZZ,ZZ9.99-.
+           05 FILLER           PIC X(4) VALUE SPACE.
+           05 BTL-PERCENT      PIC ZZZ9.9-.
+           05 FILLER           PIC X(2) VALUE SPACE.
+           05 FILLER           PIC X VALUE "*".
 
        01  GRAND-TOTAL-LINE-1.
            05 FILLER           PIC X(43) VALUE SPACE.
@@ -193,12 +192,12 @@
 
            PERFORM 300-PRINT-GRAND-TOTALS
            IF CUSTMAST-EOF-SWITCH = "N"
-              MOVE CM-BRANCH-NUMBER TO WS-PREVIOUS-BRANCH
+               MOVE CM-BRANCH-NUMBER TO WS-PREVIOUS-BRANCH
            END-IF
 
            PERFORM UNTIL CUSTMAST-EOF-SWITCH = "Y"
-              PERFORM 220-PROCESS-CUSTOMER-RECORD
-              PERFORM 210-READ-CUSTOMER-RECORD
+               PERFORM 220-PROCESS-CUSTOMER-RECORD
+               PERFORM 210-READ-CUSTOMER-RECORD
            END-PERFORM
 
            CLOSE I_CUSTMAST O_RPT2000
@@ -216,13 +215,13 @@
            END-READ.
 
        220-PROCESS-CUSTOMER-RECORD.
-		   MOVE CM-BRANCH-NUMBER TO WS-CURRENT-BRANCH
-		   
-		   IF WS-CURRENT-BRANCH NOT = WS-PREVIOUS-BRANCH
-		       PERFORM 400-PRINT-BRANCH-TOTAL
-			   PERFORM 410-CLEAR-BRANCH-TOTALS 
-			   MOVE WS-CURRENT-BRANCH TO WS-PREVIOUS-BRANCH 
-		   END-IF
+           MOVE CM-BRANCH-NUMBER TO WS-CURRENT-BRANCH
+
+           IF WS-CURRENT-BRANCH NOT = WS-PREVIOUS-BRANCH
+               PERFORM 400-PRINT-BRANCH-TOTAL
+               PERFORM 410-CLEAR-BRANCH-TOTALS
+               MOVE WS-CURRENT-BRANCH TO WS-PREVIOUS-BRANCH
+           END-IF
 
            IF LINE-COUNT >= LINES-ON-PAGE
                PERFORM 230-PRINT-HEADINGS
@@ -255,14 +254,13 @@
            ADD CM-SALES-LAST-YTD TO GRAND-TOTAL-LAST-YTD
            ADD WS-CHANGE-AMOUNT  TO GRAND-TOTAL-CHANGE
 
-           ADD 1 TO LINE-COUNT.
-		   
-		   ADD CM-SALES-THIS-YTD TO BT-THIS-YTD
-		   ADD CM-SALES-LAST-YTD TO BT-LAST-YTD 
-		   ADD WS-CHANGE-AMOUNT TO BT-CHANGE 
+           ADD 1 TO LINE-COUNT
+
+           ADD CM-SALES-THIS-YTD TO BT-THIS-YTD
+           ADD CM-SALES-LAST-YTD TO BT-LAST-YTD
+           ADD WS-CHANGE-AMOUNT TO BT-CHANGE
 
        230-PRINT-HEADINGS.
-
            ADD 1 TO PAGE-COUNT
            MOVE ZERO TO LINE-COUNT
 
@@ -293,7 +291,6 @@
            WRITE PRINT-AREA.
 
        300-PRINT-GRAND-TOTALS.
-
            MOVE TOTAL-DASH-LINE TO PRINT-AREA
            WRITE PRINT-AREA
 
@@ -314,3 +311,21 @@
            MOVE WS-CHANGE-PERCENT TO GT2-PERCENT
            MOVE GRAND-TOTAL-LINE-2 TO PRINT-AREA
            WRITE PRINT-AREA.
+
+       400-PRINT-BRANCH-TOTAL.
+           IF BT-LAST-YTD NOT = ZERO
+               COMPUTE WS-CHANGE-PERCENT =
+                   (BT-CHANGE / BT-LAST-YTD) * 100
+           ELSE
+               MOVE 999.9 TO WS-CHANGE-PERCENT
+           END-IF
+
+           MOVE BT-THIS   TO BTL-THIS
+           MOVE BT-LAST   TO BTL-LAST
+           MOVE BT-CHANGE TO BTL-CHANGE
+           MOVE WS-CHANGE-PERCENT TO BTL-PERCENT
+
+           MOVE BRANCH-TOTAL-LINE TO PRINT-AREA
+           WRITE PRINT-AREA
+
+           WRITE PRINT-AREA  *> blank line
