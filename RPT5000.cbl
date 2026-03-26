@@ -134,7 +134,7 @@
        01  CUSTOMER-LINE.
            05 CL-BRANCH              PIC 99.
            05 FILLER                 PIC X VALUE SPACE.
-           05 CL-REP                 PIC 99.
+           05 CL-REP                 PIC X(2).
            05 FILLER                 PIC X VALUE SPACE.
            05 CL-CUST                PIC 9(5).
            05 FILLER                 PIC X(7) VALUE SPACE.
@@ -148,6 +148,18 @@
            05 FILLER                 PIC X(4) VALUE SPACE.
            05 CL-PERCENT             PIC ZZZ9.9-.
 
+       01 SALESRP-TOTAL-LINE.
+	       05 FILLER                 PIC X(8) VALUE SPACE.
+		   05 FILLER                 PIC X(13) VALUE "SALESREP TOTAL".
+		   05 FILLER                 PIC X(8) VALUE SPACE.
+		   05 STL-THIS               PIC Z,ZZZ,ZZ9.99-.
+		   05 FILLER                 PIC X(4) VALUE SPACE.
+		   05 STL-LAST               PIC Z,ZZZ,ZZ9.99-.
+		   05 FILLER                 PIC X(4) VALUE SPACE.
+		   05 STL-CHANGE             PIC Z,ZZZ,ZZ9.99-.
+		   05 FILLER                 PIC X(4) VALUE SPACE.
+		   05 STL-PERCENT            PIC ZZZ9.9-.
+	   
        01  BRANCH-TOTAL-LINE.
            05 FILLER                 PIC X(8) VALUE SPACE.
            05 FILLER                 PIC X(13) VALUE "BRANCH TOTAL".
