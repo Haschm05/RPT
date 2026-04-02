@@ -1,6 +1,6 @@
 # COBOL RPT5000 – Sales Report Program
 
-## 📘 Introduction
+## Introduction
 This COBOL program generates a detailed **Year-To-Date Sales Report** using customer data. It calculates both the **change in sales amount** and the **percentage change** between the current year and the previous year.
 
 In addition to customer-level data, the program also produces:
@@ -10,25 +10,25 @@ In addition to customer-level data, the program also produces:
 
 ---
 
-## 📑 Table of Contents
-- [👥 Authors](#-authors)
-- [📌 What does it do?](#-what-does-it-do)
-- [🖥️ Output Example](#️-output-example)
-- [🧠 COBOL Concepts Used](#-cobol-concepts-used)
+## Table of Contents
+- [Authors](#-authors)
+- [What does it do?](#-what-does-it-do)
+- [Output Example](#️-output-example)
+- [COBOL Concepts Used](#-cobol-concepts-used)
 
 ---
 
-## 👥 Authors
+## Authors
   
-👨‍💻 **Hayden Schmidt**
+**Hayden Schmidt**
 
-- **Hayden Schmidt GitHub Profile**: [Haschm05](https://github.com/Haschm05)
+- **GitHub**: [Haschm05](https://github.com/Haschm05)
   
 - **Email**: [haschm05@wsc.edu]
 
 ---
 
-## 📌 What does it do?
+## What does it do?
 
 For each run, the program:
 
@@ -52,20 +52,11 @@ For each run, the program:
 
 ---
 
-## 🖥️ Output Example
-RPT5000:
-
-<img width="691" height="472" alt="image" src="https://github.com/user-attachments/assets/37f2e66d-e824-40f2-803a-ced8adf8ddd4" />
-
+## Output Example
+RPT6000:
 ---
 
-RPT3000:
-
-<img width="892" height="521" alt="image" src="https://github.com/user-attachments/assets/1df777ab-b95b-4065-b23a-e6e66e51c843" />
-
----
-
-## 🧠 COBOL Concepts Used
+## COBOL Concepts Used
 
 ### 1. Control Break Logic
 The program detects changes in **Branch** or **Sales Representative** to trigger totals.
