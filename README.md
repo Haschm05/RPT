@@ -50,10 +50,7 @@ For each run, the program:
    - Branch totals  
    - Grand totals  
 
----
 
-## Output Example
-RPT6000:
 
 ---
 
